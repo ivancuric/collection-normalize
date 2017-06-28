@@ -3,7 +3,7 @@
 (() => {
   const preferredMethodName = 'contains';
   const alias = (type, methodName) => {
-    if (type.prototype[methodName]) {
+    if (type.prototype[methodName] && !type.prototype[preferredMethodName]) {
       type.prototype[preferredMethodName] = type.prototype[methodName];
     }
   };
